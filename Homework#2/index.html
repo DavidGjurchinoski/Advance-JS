@@ -6,11 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    table {
+      text-align: center;
+      border: solid black 1px;
+      margin: 20px auto;
+    }
+    td,
+    th {
+      border: solid black 2px;
+      padding: 5px;
+    }
+    tr:nth-child(odd) {
+      background-color: rgba(189, 189, 189, 0.521);
+    }
+    .btn-toolbar {
+      width: 100%;
+      position: relative;
+    }
+    /* div.btn-toolbar > button { */
+    /* .btn { */
+    button {
+      width: 200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      border-radius: 7px;
+      background-color: rgb(34, 179, 34);
+    }
+    #prev {
+      margin: 50px 0;
+    }
+  </style>
   <body>
     <button id="part1">Part 1 Planets</button>
     <table id="part1Table"></table>
-    <button id="prev">Prev Page</button>
-    <button id="next">Next Page</button>
+    <div class="btn-toolbar">
+      <button class="btn" id="prev">Prev Page</button>
+      <button class="btn" id="next">Next Page</button>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
