@@ -28,9 +28,7 @@ $(window).on("load", () => {
     "Products over 20 price are:" +
       productArray
         .filter((product) => product.price > 20)
-        .map((product) => {
-          return `\n ${product.name} - ${product.price} den`;
-        })
+        .map((product) => `\n ${product.name} - ${product.price} den`)
   );
 
   console.log(
@@ -40,9 +38,7 @@ $(window).on("load", () => {
           (product) =>
             product.category.toLowerCase() == "food" && product.hasDiscount
         )
-        .map((product) => {
-          return `\n ${product.name}`;
-        })
+        .map((product) => `\n ${product.name}`)
   );
 
   let i = 0;
@@ -71,9 +67,7 @@ $(window).on("load", () => {
                     product.name[0].toLowerCase() == "u") &&
                   !product.hasDiscount
               )
-              .map((product) => {
-                return `\n ${product.name} - ${product.price}den`;
-              })}`
+              .map((product) => `\n ${product.name} - ${product.price} den`)}`
   );
 
   let newArray = [];
