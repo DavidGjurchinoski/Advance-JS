@@ -2,10 +2,10 @@
 
 $(window).on("load", () => {
   function Library(name, books, address) {
-    this.name = name;
-    this.books = books;
-    this.address = address;
-    this.numberOfMemebers = books.length * 15;
+    this.name = name ? name : "NoName";
+    this.books = books ? books : [];
+    this.address = address ? address : "NoAddress";
+    this.numberOfMemebers = this.books.length * 15;
     this.printBooks = () => {
       this.books.forEach((element) => {
         console.log(element);
@@ -17,10 +17,10 @@ $(window).on("load", () => {
   }
 
   function Book(title, genre, libraries, authors) {
-    this.title = title;
-    this.genre = genre;
-    this.libraries = libraries;
-    this.authors = authors;
+    this.title = title ? title : "NoTitle";
+    this.genre = genre ? genre : "NoGenre";
+    this.libraries = libraries ? libraries : [];
+    this.authors = authors ? authors : [];
     this.addLibrary = (library) => {
       this.libraries.push(library);
       library.books.push(
@@ -49,9 +49,9 @@ $(window).on("load", () => {
   }
 
   function Author(firstName, lastName, yearOfBirth) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.yearOfBirth = yearOfBirth;
+    this.firstName = firstName ? firstName : "NoName";
+    this.lastName = lastName ? lastName : "NoLastName";
+    this.yearOfBirth = yearOfBirth ? yearOfBirth : "NoYearOfBirth";
     this.books = [];
     this.currentBook = null;
     this.startBook = (book) => {
