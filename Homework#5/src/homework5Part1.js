@@ -23,9 +23,7 @@ $(window).on("load", () => {
     this.authors = authors ? authors : [];
     this.addLibrary = (library) => {
       this.libraries.push(library);
-      library.books.push(
-        new Book(this.title, this.genre, this.libraries, this.authors)
-      );
+      library.books.push(this);
     };
     this.removeLibrary = (removeFromLibrary) => {
       this.libraries.map((library, index) => {
@@ -35,12 +33,7 @@ $(window).on("load", () => {
         }
       });
       removeFromLibrary.books.map((book, index) => {
-        if (
-          isEqual(
-            book,
-            new Book(this.title, this.genre, this.libraries, this.authors)
-          )
-        ) {
+        if (isEqual(book, this)) {
           this.libraries.books.splice(index, 1);
           return;
         }
